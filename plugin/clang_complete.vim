@@ -219,7 +219,7 @@ function! s:parseConfig()
             \ '-I' . '\1', 'g')
     else
       let l:opt = substitute(l:opt, '\C-I\s*\(\%(\w\|\.\|/\|\\\s\)*\)',
-            \ '-I' . l:root . '/\1', 'g')
+            \ '-I"' . l:root . '/\1"', 'g')
     endif
     let b:clang_user_options .= ' ' . l:opt
   endfor
